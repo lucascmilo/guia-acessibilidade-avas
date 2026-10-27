@@ -1,0 +1,61 @@
+/* ========== Trilha ========== */
+
+.trilha {
+  padding-top: 26px;
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  color: var(--color-teal);
+  text-underline-offset: 3px;
+}
+
+.separador {
+  margin-inline: 6px;
+  color: var(--color-text-muted);
+}
+
+.atual {
+  color: var(--color-text-muted);
+}
+
+/* ========== Telas estreitas: voltar ========== */
+
+.voltar {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .lista {
+    display: none;
+  }
+
+  .voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    min-height: 44px;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-teal);
+    text-underline-offset: 3px;
+  }
+}

@@ -1,0 +1,42 @@
+/* ========== Rodapé ========== */
+
+.rodape {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.interno {
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-8);
+  padding-block: var(--space-6);
+}
+
+/* ========== Links e nota ========== */
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) 45px;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-teal);
+  text-underline-offset: 3px;
+}
+
+.nota {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}

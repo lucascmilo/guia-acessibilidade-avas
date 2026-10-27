@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "guia-dev", "runtimeExecutable": "npm", "runtimeArgs": ["--prefix", "E:/guia-acessibilidade-avas", "run", "dev"], "port": 3000 }
+  ]
+}

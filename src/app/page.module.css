@@ -1,0 +1,246 @@
+/* ========== Abertura ========== */
+
+.abertura {
+  padding-top: 98px;
+  max-width: 760px;
+}
+
+.tituloAbertura {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.textoAbertura {
+  margin-top: var(--space-6);
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--color-text-muted);
+}
+
+.acoesAbertura {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+/* ========== Seções ========== */
+
+.secao {
+  padding-top: 88px;
+}
+
+.secaoFinal {
+  padding-top: 88px;
+  padding-bottom: 86px;
+}
+
+.tituloSecao {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.introducaoSecao {
+  margin-top: var(--space-2);
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--color-text-muted);
+}
+
+/* ========== Por onde começar ========== */
+
+.caminhos {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.cartaoCaminho {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--motion-fast) var(--ease), transform var(--motion-fast) var(--ease);
+}
+
+.cartaoCaminho:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.cartaoCaminho:focus-within {
+  border-color: var(--color-primary);
+}
+
+.tituloCaminho {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.textoCaminho {
+  margin-top: var(--space-3);
+  max-width: 320px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.linkCaminho {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: var(--space-6);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-underline-offset: 3px;
+}
+
+.linkCaminho:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ========== Encontre pelo desafio ========== */
+
+.desafios {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 13px 20px;
+}
+
+.desafio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 60px;
+  height: 100%;
+  padding: var(--space-2) var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: border-color var(--motion-fast) var(--ease), background-color var(--motion-fast) var(--ease);
+}
+
+.desafio:hover {
+  border-color: var(--color-primary);
+  background: var(--color-tint);
+}
+
+.codigoDesafio {
+  flex: none;
+  width: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.nomeDesafio {
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--color-text-muted);
+}
+
+/* ========== Como ler uma ficha ========== */
+
+.linhaLeitura {
+  margin-top: 31px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-12) 96px;
+}
+
+.cartaoExemplo {
+  flex: 1 1 520px;
+  max-width: 710px;
+  min-width: 0;
+  min-height: 259px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: 34px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-teal);
+  border-radius: var(--radius-md);
+}
+
+.tituloExemplo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.etiquetasExemplo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.textoExemplo {
+  max-width: 540px;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.listaLeitura {
+  flex: 1 1 360px;
+  max-width: 500px;
+  margin: 0;
+  padding-left: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  font-size: 1.0625rem;
+  line-height: 1.25;
+  color: var(--color-text-muted);
+}
+
+.listaLeitura b {
+  color: var(--color-text-muted);
+}
+
+/* ========== Telas estreitas ========== */
+
+@media (max-width: 760px) {
+  .abertura {
+    padding-top: var(--space-12);
+  }
+
+  .secao {
+    padding-top: 56px;
+  }
+
+  .secaoFinal {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .cartaoCaminho {
+    min-height: 0;
+  }
+
+  .cartaoExemplo {
+    min-height: 0;
+    padding: var(--space-6);
+  }
+
+  .linhaLeitura {
+    gap: var(--space-8);
+  }
+}

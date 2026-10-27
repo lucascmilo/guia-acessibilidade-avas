@@ -1,0 +1,52 @@
+/* ========== Caixa ========== */
+
+.caixa {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  border: 1px solid;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+}
+
+/* ========== Variantes ========== */
+
+.info {
+  background: var(--color-info-bg);
+  border-color: var(--color-border);
+}
+
+.atencao {
+  min-height: 116px;
+  background: var(--color-warning-bg);
+  border-color: var(--color-warning-border);
+}
+
+/* ========== Ícone ========== */
+
+.icone {
+  flex: none;
+}
+
+.info .icone {
+  color: var(--color-primary);
+}
+
+.atencao .icone {
+  color: var(--color-warning-text);
+}
+
+/* ========== Texto ========== */
+
+.texto {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.info .texto {
+  color: var(--color-text-muted);
+}
+
+.atencao .texto {
+  color: var(--color-text);
+}

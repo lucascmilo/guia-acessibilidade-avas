@@ -1,0 +1,50 @@
+/* ========== Colunas ========== */
+
+.linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-8) var(--gutter);
+  padding-bottom: var(--space-12);
+}
+
+.lateral {
+  flex: 1 1 280px;
+  min-width: 0;
+  max-width: var(--sidebar);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.fixa {
+  align-self: stretch;
+}
+
+.fixa > :first-child {
+  position: sticky;
+  top: var(--topo-fixo, var(--space-6));
+  z-index: 2;
+  max-height: var(--altura-max-fixa, calc(100vh - var(--space-6) * 2));
+  overflow-y: var(--rolagem-fixa, auto);
+  overscroll-behavior: contain;
+}
+
+.conteudo {
+  flex: 999 1 560px;
+  min-width: 0;
+}
+
+/* ========== Telas estreitas ========== */
+
+@media (max-width: 960px) {
+  .lateral {
+    max-width: none;
+  }
+
+  .fixa > :first-child {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+}

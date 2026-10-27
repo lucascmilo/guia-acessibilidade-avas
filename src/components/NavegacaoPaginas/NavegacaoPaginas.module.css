@@ -1,0 +1,41 @@
+/* ========== Anterior e Próxima ========== */
+
+.paginacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.link {
+  flex: 0 1 400px;
+  min-height: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) 22px;
+  background: var(--reader-surface, var(--color-surface));
+  border: 1px solid var(--reader-border, var(--color-border-strong));
+  border-radius: var(--radius-lg);
+  color: var(--reader-text, var(--color-text));
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--reader-text, var(--color-text));
+}
+
+.proxima {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.direcao {
+  font-size: 0.9375em;
+}
+
+.titulo {
+  font-size: 1.125em;
+  font-weight: 700;
+}

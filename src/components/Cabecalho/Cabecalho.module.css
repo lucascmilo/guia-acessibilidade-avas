@@ -1,0 +1,314 @@
+/* ========== Estrutura ========== */
+
+.cabecalho {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.interno {
+  width: min(100% - 32px, var(--container-header));
+  min-height: 70px;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) 36px;
+  padding-block: var(--space-2);
+}
+
+/* ========== Marca ========== */
+
+.marca {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.marca:hover {
+  color: var(--color-text);
+}
+
+/* ========== Menu ========== */
+
+.menu {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) 36px;
+}
+
+.botaoMenu {
+  display: none;
+}
+
+/* ========== Navegação ========== */
+
+.navegacao {
+  flex: 1 1 auto;
+}
+
+.listaNavegacao {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 30px;
+}
+
+.linkNavegacao {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 6px;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color var(--motion-fast) var(--ease), border-color var(--motion-base) var(--ease);
+}
+
+.linkNavegacao:hover {
+  color: var(--color-text);
+}
+
+.linkNavegacaoAtual {
+  color: var(--color-text);
+  font-weight: 700;
+  border-bottom-color: var(--color-primary);
+}
+
+/* ========== Ações: buscar, ajustes de leitura e ajuda ========== */
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) 41px;
+}
+
+.botaoBusca,
+.botaoAjustes,
+.botaoAjuda {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--motion-fast) var(--ease), border-color var(--motion-fast) var(--ease),
+    color var(--motion-fast) var(--ease);
+}
+
+.engrenagem {
+  transition: transform var(--motion-base) var(--ease);
+}
+
+.botaoAjustes[aria-expanded="true"] .engrenagem {
+  transform: rotate(60deg);
+}
+
+.botaoAjustes[aria-expanded="true"] {
+  background: var(--color-tint-strong);
+  font-weight: 700;
+}
+
+.botaoBusca {
+  min-width: 150px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.botaoBusca:hover,
+.botaoAjuda:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.botaoAjustes {
+  min-width: 180px;
+  background: var(--color-tint);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.botaoAjustes:hover {
+  color: var(--color-primary-hover);
+  background: var(--color-tint-strong);
+}
+
+.botaoAjustes:hover .engrenagem {
+  transform: rotate(60deg);
+}
+
+.botaoAjuda {
+  min-width: 70px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.botaoAjuda[aria-current="page"] {
+  color: var(--color-text);
+  font-weight: 700;
+  border: 2px solid var(--color-text);
+}
+
+/* ========== Telas médias: cabeçalho compacto ========== */
+
+@media (min-width: 1241px) and (max-width: 1399px) {
+  .interno,
+  .menu {
+    gap: var(--space-2) var(--space-6);
+  }
+
+  .listaNavegacao {
+    gap: 0 var(--space-4);
+  }
+
+  .acoes {
+    gap: var(--space-2) var(--space-3);
+  }
+
+  .botaoBusca,
+  .botaoAjustes {
+    min-width: 0;
+  }
+}
+
+/* ========== Telas estreitas: botão Menu ========== */
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 1240px) {
+  .interno {
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .marca {
+    flex: 1 1 0;
+    min-width: 0;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .botaoMenu {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  .botaoMenu:hover {
+    border-color: var(--color-text-muted);
+    background: var(--color-tint);
+  }
+
+  .iconeMenu,
+  .iconeMenu::before,
+  .iconeMenu::after {
+    display: block;
+    width: 16px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+    transition: transform var(--motion-base) var(--ease), opacity var(--motion-fast) var(--ease);
+  }
+
+  .iconeMenu {
+    position: relative;
+  }
+
+  .iconeMenu::before,
+  .iconeMenu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .iconeMenu::before {
+    top: -5px;
+  }
+
+  .iconeMenu::after {
+    top: 5px;
+  }
+
+  .botaoMenu[aria-expanded="true"] .iconeMenu {
+    background: transparent;
+  }
+
+  .botaoMenu[aria-expanded="true"] .iconeMenu::before {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .botaoMenu[aria-expanded="true"] .iconeMenu::after {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+    padding-block: var(--space-2) var(--space-4);
+  }
+
+  .menuAberto {
+    display: flex;
+    animation: menu-in var(--motion-base) var(--ease);
+  }
+
+  .listaNavegacao {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .linkNavegacao {
+    width: 100%;
+    padding: 0 var(--space-3);
+    border-bottom: 0;
+    border-left: 3px solid transparent;
+  }
+
+  .linkNavegacaoAtual {
+    border-left-color: var(--color-primary);
+    background: var(--color-tint);
+  }
+
+  .acoes {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .botaoBusca,
+  .botaoAjustes,
+  .botaoAjuda {
+    min-width: 0;
+    min-height: 44px;
+    width: 100%;
+  }
+}

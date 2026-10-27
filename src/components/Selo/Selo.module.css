@@ -1,0 +1,86 @@
+/* ========== Selo e etiqueta de código ========== */
+
+.selo,
+.codigo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid;
+  color: var(--color-text-muted);
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.selo {
+  font-weight: 700;
+}
+
+/* ========== Tamanhos ========== */
+
+.medio {
+  min-height: 30px;
+  padding: 3px 14px;
+  font-size: var(--text-base);
+}
+
+.pequeno {
+  min-height: 26px;
+  padding: 2px 12px;
+  font-size: var(--text-sm);
+}
+
+.codigo {
+  border-color: var(--color-text-muted);
+  background: var(--color-surface);
+}
+
+/* ========== Tipos de orientação ========== */
+
+.normativa {
+  background: var(--badge-normativa-bg);
+  border-color: var(--color-teal);
+}
+
+.tecnica {
+  background: var(--badge-tecnica-bg);
+  border-color: var(--badge-tecnica-border);
+}
+
+.dua {
+  background: var(--badge-dua-bg);
+  border-color: var(--badge-dua-border);
+}
+
+.juridico {
+  background: var(--badge-juridico-bg);
+  border-color: var(--badge-juridico-border);
+}
+
+.proposta {
+  background: var(--badge-proposta-bg);
+  border-color: var(--badge-proposta-border);
+}
+
+/* ========== Ícones ========== */
+
+.normativa svg {
+  color: var(--color-text-muted);
+}
+
+.tecnica svg {
+  color: var(--badge-tecnica-border);
+}
+
+.dua svg {
+  color: var(--badge-dua-border);
+}
+
+.juridico svg {
+  color: var(--badge-juridico-border);
+}
+
+.proposta svg {
+  color: var(--badge-proposta-border);
+}

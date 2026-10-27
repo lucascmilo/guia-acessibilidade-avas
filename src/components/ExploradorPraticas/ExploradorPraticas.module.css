@@ -1,0 +1,151 @@
+/* ========== Resultados ========== */
+
+.resultados {
+  padding-bottom: var(--space-4);
+}
+
+.cabecalho {
+  min-height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.contador {
+  padding: 4px var(--space-6);
+  background: var(--color-tint);
+  border: 1px solid var(--color-count-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+/* ========== Lista de cartões ========== */
+
+.lista {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.item {
+  animation: card-in var(--motion-base) var(--ease) both;
+}
+
+/* ========== Nenhum resultado ========== */
+
+.vazio {
+  margin-top: var(--space-6);
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  animation: card-in var(--motion-base) var(--ease) both;
+}
+
+.tituloVazio {
+  font-size: var(--text-md);
+  font-weight: 700;
+}
+
+.textoVazio {
+  margin-top: var(--space-2);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+
+.sugestoes {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.sugestao {
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  background: var(--color-tint);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.sugestao:hover {
+  border-color: var(--color-teal);
+}
+
+.botaoVazio {
+  min-height: 44px;
+  margin-top: var(--space-4);
+  padding: 0 var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-teal);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  color: var(--color-teal);
+  cursor: pointer;
+  transition: background-color var(--motion-fast) var(--ease);
+}
+
+.botaoVazio:hover {
+  background: var(--color-tint);
+}
+
+/* ========== Também no glossário ========== */
+
+.glossario {
+  margin-top: var(--space-8);
+}
+
+.tituloGlossario {
+  font-size: var(--text-md);
+  font-weight: 700;
+}
+
+.listaGlossario {
+  margin-top: var(--space-2);
+  padding-left: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+}
+
+/* ========== Contador ========== */
+
+@keyframes count-in {
+  from {
+    opacity: 0.2;
+  }
+}
+
+.textoContador {
+  display: inline-block;
+  animation: count-in var(--motion-base) var(--ease-soft);
+}

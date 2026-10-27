@@ -1,0 +1,49 @@
+/* ========== Estrutura ========== */
+
+.espacador {
+  height: 34px;
+}
+
+.colunaFoco {
+  max-width: var(--reading-width);
+  margin-inline: auto;
+  padding-block: var(--space-12);
+}
+
+.leitor {
+  padding-bottom: 0;
+  font-size: 1rem;
+}
+
+/* ========== Sumário e botão fixos juntos ========== */
+
+.grupoFixo {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 6px;
+  margin: -6px;
+  --topo-fixo: calc(var(--space-6) - 6px);
+}
+
+/* ========== Botão abrir ajustes de leitura ========== */
+
+.abrirPainel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 50px;
+  padding: 0 var(--space-4);
+  background: var(--color-tint);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-base);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: background-color var(--motion-fast) var(--ease);
+}
+
+.abrirPainel:hover {
+  background: var(--color-tint-strong);
+}

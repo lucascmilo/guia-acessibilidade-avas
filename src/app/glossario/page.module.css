@@ -1,0 +1,94 @@
+/* ========== Cabeçalho da página ========== */
+
+.titulo {
+  margin-top: 30px;
+  font-size: 1.6875rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.introducao {
+  margin-top: var(--space-3);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+/* ========== Índice de letras ========== */
+
+.letras {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 19px;
+}
+
+.letra {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-teal);
+  text-decoration: none;
+}
+
+.letra:hover {
+  background: var(--color-tint);
+}
+
+/* ========== Termos ========== */
+
+.grupos {
+  padding-bottom: var(--space-12);
+}
+
+.grupo {
+  padding-top: var(--space-12);
+  scroll-margin-top: var(--space-4);
+}
+
+.letraGrupo {
+  padding: 0 0 18px 24px;
+  border-bottom: 1px solid var(--color-border-strong);
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-teal);
+}
+
+.termos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-top: var(--space-6);
+}
+
+.termo {
+  scroll-margin-top: var(--space-6);
+  border-radius: var(--radius-md);
+}
+
+.nomeTermo {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.definicao {
+  margin-top: var(--space-2);
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.fonte {
+  margin-top: var(--space-8);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}

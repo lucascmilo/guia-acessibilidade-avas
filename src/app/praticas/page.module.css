@@ -1,0 +1,14 @@
+/* ========== Cabeçalho da página ========== */
+
+.titulo {
+  margin-top: 30px;
+  font-size: 1.6875rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.introducao {
+  margin: var(--space-3) 0 var(--space-10);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}

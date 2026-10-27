@@ -1,0 +1,58 @@
+/* ========== Tabela ========== */
+
+.envoltorio {
+  overflow-x: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.tabela th,
+.tabela td {
+  padding: var(--space-2) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.tabela tbody tr:last-child th,
+.tabela tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tabela th + th,
+.tabela th + td,
+.tabela td + td {
+  border-left: 1px solid var(--color-border);
+}
+
+.tabela thead th {
+  height: 48px;
+  background: var(--color-tint);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.tabela tbody th,
+.tabela tbody td {
+  height: 46px;
+}
+
+.cabecalhoLinha {
+  font-weight: 700;
+}
+
+.tabela .centro {
+  padding-inline: var(--space-2);
+  text-align: center;
+  font-weight: 700;
+  white-space: nowrap;
+}

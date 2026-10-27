@@ -1,0 +1,182 @@
+/* ========== Sumário ========== */
+
+.sumario {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+/* ========== Lista e indicador da seção atual ========== */
+
+.envoltorioLista {
+  position: relative;
+}
+
+.indicador {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--color-teal);
+  transition: transform var(--motion-base) var(--ease), height var(--motion-base) var(--ease);
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--space-1) var(--space-4) var(--space-1) 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--ease);
+}
+
+.link:hover {
+  color: var(--color-text);
+}
+
+.linkAtual {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.rotuloLink {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.lida {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: var(--space-2);
+  padding: 1px var(--space-2);
+  border: 1px solid var(--color-teal);
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-teal);
+}
+
+/* ========== Progresso ========== */
+
+.progresso {
+  margin-top: var(--space-6);
+}
+
+.rotuloProgresso {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.barra {
+  height: 22px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.preenchimentoBarra {
+  height: 100%;
+  background: var(--color-teal);
+  transition: width var(--motion-base) var(--ease);
+}
+
+.textoProgresso {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+
+/* ========== Telas estreitas: botão Nessa página ========== */
+
+.alternarCelular {
+  display: none;
+}
+
+.seta {
+  display: inline-block;
+  transition: transform var(--motion-base) var(--ease);
+}
+
+[aria-expanded="true"] > .seta {
+  transform: rotate(90deg);
+}
+
+@keyframes toc-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 960px) {
+  .sumario {
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .titulo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .alternarCelular {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+    min-height: 44px;
+    padding: 0;
+    background: none;
+    border: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .contadorCelular {
+    margin-left: auto;
+    font-size: var(--text-sm);
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .corpo {
+    display: none;
+  }
+
+  .corpoAberto {
+    display: block;
+    padding-bottom: var(--space-4);
+    animation: toc-in var(--motion-base) var(--ease);
+  }
+}

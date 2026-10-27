@@ -1,0 +1,18 @@
+/* ========== Link Ir para o conteúdo ========== */
+
+.pular {
+  position: absolute;
+  top: var(--space-2);
+  left: -9999px;
+  z-index: 100;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+.pular:focus {
+  left: var(--space-4);
+}
