@@ -311,7 +311,7 @@ export const GRUPOS: GrupoPraticas[] = [
           "Confira se cada unidade abre com 3 a 5 ideias centrais.",
           "Verifique se os destaques são poucos e não competem entre si.",
         ],
-        sources: [dua("Diretriz 3.2")],
+        sources: [dua("Consideração 3.2")],
       },
       {
         id: "multiplas-midias",
@@ -323,7 +323,7 @@ export const GRUPOS: GrupoPraticas[] = [
         what: "Apresentar os conceitos em mais de um formato, como texto, imagem e vídeo curto, esclarecendo vocabulário e símbolos.",
         why: "O mesmo conteúdo em formatos diferentes permite escolher o que exige menos esforço naquele momento (CAST, 2024).",
         verify: ["Escolha um conceito central da unidade.", "Confira se ele aparece em pelo menos dois formatos."],
-        sources: [dua("Diretrizes 2.1 e 2.5")],
+        sources: [dua("Considerações 2.1 e 2.5")],
       },
     ],
   },
@@ -351,7 +351,7 @@ export const GRUPOS: GrupoPraticas[] = [
           "Mude tema, fonte e espaçamento.",
           "Confira se a escolha vale em todas as páginas e fica guardada.",
         ],
-        sources: [dua("Diretriz 1.1"), gem(GEM_STEP_3)],
+        sources: [dua("Consideração 1.1"), gem(GEM_STEP_3)],
       },
       {
         id: "texto-ampliado",
@@ -456,7 +456,7 @@ export const GRUPOS: GrupoPraticas[] = [
           "Confira se ela está dividida em etapas numeradas.",
           "Verifique se cada etapa diz o que entregar.",
         ],
-        sources: [npdc("Prática Task Analysis (TA)"), dua("Diretriz 6.3")],
+        sources: [npdc("Prática Task Analysis (TA)"), dua("Consideração 6.3")],
       },
       {
         id: "progresso",
@@ -471,7 +471,7 @@ export const GRUPOS: GrupoPraticas[] = [
           "Conclua uma atividade.",
           "Confira se o progresso muda e é descrito em texto, como “3 de 7”.",
         ],
-        sources: [dua("Diretrizes 6.3 e 6.4")],
+        sources: [dua("Considerações 6.3 e 6.4")],
       },
       {
         id: "agenda",
@@ -502,7 +502,7 @@ export const GRUPOS: GrupoPraticas[] = [
           "Abra três atividades.",
           "Confira se cada uma diz o objetivo e se é obrigatória ou opcional.",
         ],
-        sources: [dua("Diretriz 8.1")],
+        sources: [dua("Consideração 8.1")],
       },
     ],
   },
@@ -632,7 +632,7 @@ export const GRUPOS: GrupoPraticas[] = [
           "Liste os canais de contato com docentes e tutores.",
           "Confira se há pelo menos uma opção por texto e uma por voz ou vídeo.",
         ],
-        sources: [gem(GEM_STEP_3), dua("Diretriz 5.1")],
+        sources: [gem(GEM_STEP_3), dua("Consideração 5.1")],
       },
       {
         id: "comunidade-moderada",
@@ -647,7 +647,7 @@ export const GRUPOS: GrupoPraticas[] = [
           "Confira se o curso tem fórum ou grupo entre pares.",
           "Verifique quem modera e se as regras de convivência estão visíveis.",
         ],
-        sources: [gem(GEM_STEP_3), dua("Diretriz 8.4")],
+        sources: [gem(GEM_STEP_3), dua("Consideração 8.4")],
       },
       {
         id: "feedback-orientado",
@@ -662,7 +662,7 @@ export const GRUPOS: GrupoPraticas[] = [
           "Leia três retornos dados em atividades.",
           "Confira se cada um aponta um próximo passo concreto.",
         ],
-        sources: [dua("Diretriz 8.5")],
+        sources: [dua("Consideração 8.5")],
       },
       {
         id: "acessibilidade-e-direito",
