@@ -13,7 +13,7 @@ export default function PraticasPage() {
 
       <h1 className={styles.titulo}>Práticas</h1>
       <p className={styles.introducao}>
-        Filtre por tipo de orientação, desafio ou estratégia. Os filtros só mudam a lista quando você clicar em
+        Filtre por tipo de orientação, tarefa, desafio ou estratégia. Os filtros só mudam a lista quando você clicar em
         “Aplicar filtros”.
       </p>
 

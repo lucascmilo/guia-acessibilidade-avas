@@ -86,7 +86,7 @@ test.describe("Teclado", () => {
       await page.keyboard.press("Tab");
       const estilo = await page.evaluate(() => {
         const el = document.activeElement as HTMLElement;
-        if (el === document.body) return { nome: "body", contorno: "fora da página", largura: 3 };
+        if (el === document.body || el.tagName === "NEXTJS-PORTAL") return { nome: "fora da página", contorno: "fora da página", largura: 3 };
         const cs = getComputedStyle(el);
         return { nome: el.textContent?.trim().slice(0, 30), contorno: cs.outlineStyle, largura: parseFloat(cs.outlineWidth) };
       });
@@ -169,10 +169,10 @@ test.describe("Página de prática", () => {
     await expect(page.locator("#ajustes-de-leitura")).toBeVisible();
   });
 
-  test("“Nessa página” fica fixo ao rolar", async ({ page }) => {
+  test("“Nesta página” fica fixo ao rolar", async ({ page }) => {
     await comAjustes(page, {});
     await abrir(page, "/praticas/previsibilidade-e-controle-da-atencao");
-    const sumario = page.getByRole("navigation", { name: "Nessa página" });
+    const sumario = page.getByRole("navigation", { name: "Nesta página" });
     for (const y of [600, 1200, 1800]) {
       await page.evaluate((destino) => window.scrollTo({ top: destino, behavior: "instant" }), y);
       const topo = await sumario.evaluate((el) => el.getBoundingClientRect().top);
@@ -205,7 +205,7 @@ test.describe("Página de prática", () => {
   test("o marcador do sumário passa por todas as fichas ao rolar até o fim", async ({ page }) => {
     await comAjustes(page, {});
     await abrir(page, "/praticas/previsibilidade-e-controle-da-atencao");
-    const sumario = page.getByRole("navigation", { name: "Nessa página" });
+    const sumario = page.getByRole("navigation", { name: "Nesta página" });
     const total = await sumario.getByRole("link").count();
     const vistos = new Set<string>();
     const fim = await page.evaluate(() => document.documentElement.scrollHeight - window.innerHeight);
@@ -236,13 +236,13 @@ test.describe("Página de prática", () => {
   });
 });
 
-test.describe("Sumário “Nessa página”", () => {
+test.describe("Sumário “Nesta página”", () => {
   for (const caminho of ["/ajuda", "/praticas/previsibilidade-e-controle-da-atencao"]) {
     for (const reduzir of [true, false]) {
       test(`em ${caminho}, o marcador fica no item clicado (${reduzir ? "sem" : "com"} rolagem suave)`, async ({ page }) => {
         await comAjustes(page, { reduceMotion: reduzir });
         await abrir(page, caminho);
-        const sumario = page.getByRole("navigation", { name: "Nessa página" });
+        const sumario = page.getByRole("navigation", { name: "Nesta página" });
         const links = sumario.getByRole("link");
         const total = await links.count();
         for (let i = 0; i < total; i++) {
@@ -295,7 +295,41 @@ test.describe("Filtros da página Práticas", () => {
   }
 });
 
+test.describe("Modo foco", () => {
+  test("há espaço entre o cabeçalho e o conteúdo, com os ajustes abertos ou fechados", async ({ page }) => {
+    await comAjustes(page, {});
+    await abrir(page, "/praticas/previsibilidade-e-controle-da-atencao");
+    await page.getByRole("button", { name: "Abrir ajustes de leitura" }).click();
+    await page.locator("#ajustes-de-leitura").getByText("Modo Foco").click();
+    await expect(page.locator("html")).toHaveAttribute("data-focus-mode", "true");
+    const distancia = () =>
+      page.evaluate(() => {
+        const base = document.querySelector("header")!.getBoundingClientRect().bottom;
+        const alvos = [document.getElementById("ajustes-de-leitura"), document.querySelector("main h1")].filter(Boolean);
+        return Math.min(...alvos.map((el) => el!.getBoundingClientRect().top)) - base;
+      });
+    expect(await distancia(), "com os ajustes abertos").toBeGreaterThanOrEqual(24);
+    await page.locator("#ajustes-de-leitura").getByRole("button", { name: "Fechar" }).click();
+    expect(await distancia(), "com os ajustes fechados").toBeGreaterThanOrEqual(24);
+  });
+});
+
 test.describe("Conteúdo do guia", () => {
+  test("textos revisados", async ({ page }) => {
+    await comAjustes(page, {});
+    await abrir(page, "/sobre");
+    await expect(page.getByText("com 17 documentos (DOC-01 a DOC-17)")).toBeVisible();
+    await expect(page.getByText("em uma matriz por documento")).toBeVisible();
+    await abrir(page, "/praticas");
+    await expect(page.getByText(/Filtre por tipo de orientação, tarefa, desafio ou estratégia/)).toBeVisible();
+    await abrir(page, "/ajuda");
+    await expect(page.getByText(/por tipo de orientação, tarefa, desafio ou estratégia/)).toBeVisible();
+    await expect(page.getByRole("navigation", { name: "Nesta página" })).toBeVisible();
+    await abrir(page, "/");
+    const exemplo = page.locator("#ficha-exemplo").locator("..");
+    for (const codigo of ["D1", "D3", "E3"]) await expect(exemplo.getByText(codigo, { exact: true })).toBeVisible();
+  });
+
   test("toda ficha tem “Exemplo no AVA”, desafio e estratégia", () => {
     for (const pratica of PRATICAS) {
       expect(EXEMPLOS[pratica.id], `${pratica.id} sem exemplo`).toBeTruthy();
@@ -307,7 +341,7 @@ test.describe("Conteúdo do guia", () => {
   test("“lida” só aparece depois de rolar até o fim da ficha e some ao recarregar", async ({ page }) => {
     await comAjustes(page, {});
     await abrir(page, "/praticas/navegacao-e-orientacao");
-    const sumario = page.getByRole("navigation", { name: "Nessa página" });
+    const sumario = page.getByRole("navigation", { name: "Nesta página" });
     const lida = sumario.getByRole("link", { name: /Mostrar onde o estudante está.*lida/ });
     await expect(sumario.getByText("lida")).toHaveCount(0);
     await page.evaluate(() => window.scrollTo({ top: 400, behavior: "instant" }));

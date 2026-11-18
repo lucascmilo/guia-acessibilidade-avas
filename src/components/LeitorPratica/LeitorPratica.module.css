@@ -4,6 +4,10 @@
   height: 34px;
 }
 
+.espacadorFoco {
+  height: var(--space-12);
+}
+
 .colunaFoco {
   max-width: var(--reading-width);
   margin-inline: auto;

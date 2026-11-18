@@ -101,6 +101,7 @@ export default function HomePage() {
               <Selo type="normativa" />
               <EtiquetaCodigo code="D1" />
               <EtiquetaCodigo code="D3" />
+              <EtiquetaCodigo code="E3" />
             </div>
             <p className={styles.textoExemplo}>
               <b>O que fazer:</b> manter menus e mecanismos de ajuda na mesma ordem em todas as páginas do AVA.

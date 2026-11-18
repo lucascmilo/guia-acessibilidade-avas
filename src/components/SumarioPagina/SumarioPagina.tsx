@@ -98,7 +98,7 @@ export function SumarioPagina({ items, showProgress = false }: SumarioPaginaProp
   return (
     <nav aria-labelledby="toc-titulo" className={styles.sumario} data-hide-in-focus>
       <h2 id="toc-titulo" className={styles.titulo}>
-        Nessa página
+        Nesta página
       </h2>
       <button
         type="button"
@@ -110,7 +110,7 @@ export function SumarioPagina({ items, showProgress = false }: SumarioPaginaProp
         <span aria-hidden="true" className={styles.seta}>
           &gt;
         </span>
-        Nessa página
+        Nesta página
         {showProgress && <span className={styles.contadorCelular}>Ficha {active + 1} de {items.length}</span>}
       </button>
       <div id="toc-corpo" className={mobileOpen ? `${styles.corpo} ${styles.corpoAberto}` : styles.corpo}>

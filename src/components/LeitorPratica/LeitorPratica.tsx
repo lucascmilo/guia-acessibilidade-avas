@@ -56,6 +56,7 @@ export function LeitorPratica({ breadcrumb, toc, children }: LeitorPraticaProps)
     <ProvedorFichasLidas>
       <Trilha items={breadcrumb} />
       <div className={styles.espacador} data-hide-in-focus />
+      {settings.focusMode && <div className={styles.espacadorFoco} />}
       <DuasColunas sidebar={sidebar} contentMaxWidth="var(--reading-width)" stickySidebar={!panelOpen}>
         {reader}
       </DuasColunas>

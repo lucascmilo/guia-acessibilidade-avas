@@ -7,8 +7,8 @@ export const metadata: Metadata = { title: "Sobre a pesquisa" };
 
 const ETAPAS = [
   { strong: "Identificação das práticas", rest: " nos 38 estudos da revisão de Teixeira et al. (2026a)." },
-  { strong: "Constituição da base documental", rest: ", com 17 registros (DOC-01 a DOC-17)." },
-  { strong: "Organização pelo DUA 3.0", rest: ", em uma matriz por registro." },
+  { strong: "Constituição da base documental", rest: ", com 17 documentos (DOC-01 a DOC-17)." },
+  { strong: "Organização pelo DUA 3.0", rest: ", em uma matriz por documento." },
   { strong: "Rastreabilidade:", rest: " cada informação ligada ao artigo, item, diretriz ou critério de origem." },
   {
     strong: "Elaboração do guia,",

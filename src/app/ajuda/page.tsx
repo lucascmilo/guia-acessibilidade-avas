@@ -76,7 +76,7 @@ export default function AjudaPage() {
               <b>Menu no topo:</b> igual em todas as páginas, na mesma ordem.
             </li>
             <li>
-              <b>Três caminhos até uma prática:</b> o menu Práticas, os filtros (por tipo, desafio ou estratégia) e a busca.
+              <b>Três caminhos até uma prática:</b> o menu Práticas, os filtros (por tipo de orientação, tarefa, desafio ou estratégia) e a busca.
             </li>
             <li>
               <b>Linha “Você está em”:</b> mostra onde você está e leva de volta às páginas anteriores.
